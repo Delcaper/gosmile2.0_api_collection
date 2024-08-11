@@ -2222,6 +2222,19 @@
 				"url": "https://backend.api-wa.co/campaign/smartping/api"
 			},
 			"response": []
+		},
+		{
+			"name": "Test Request",
+			"id": "59cf9941-138a-4db0-8340-65bf5fc12aad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
 		}
 	],
 	"event": [
