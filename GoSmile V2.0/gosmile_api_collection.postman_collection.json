@@ -1,0 +1,2263 @@
+{
+	"info": {
+		"_postman_id": "70f9b167-ed43-41ab-b7ed-8da4511e878c",
+		"name": "Shipment Booking(Account & Cash)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "sign in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.environment.set(\"token\", response.accessToken);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"id": "8db4807b-c6ba-4378-af73-83295285d3ea"
+							}
+						}
+					],
+					"id": "4589f9d8-57aa-4d6f-9594-c32d1e199743",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"bengaluru.hebbalhub@shreemaruticourier.com\",\r\n    \"password\": \"Admin@123\"\r\n}"
+						},
+						"url": "{{baseUrl}}api/users/sign-in"
+					},
+					"response": []
+				}
+			],
+			"id": "dffe3922-a05b-4a5b-adc0-2255627808a5"
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Client List",
+					"id": "dee497d0-a060-41e8-ba09-ec6308933e77",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cpid",
+								"value": "1186"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							}
+						],
+						"url": "{{baseUrl}}client-onboard/v1/cp/clients"
+					},
+					"response": []
+				},
+				{
+					"name": "Client Details",
+					"id": "006cc2df-4590-4ab6-b6b4-5d361aa1fd0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cpid",
+								"value": "1186"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							}
+						],
+						"url": "{{baseUrl}}client-onboard/v1/organizations/916161"
+					},
+					"response": []
+				},
+				{
+					"name": "Content And Description",
+					"id": "1ebfb695-0dec-4022-8270-d842af287e49",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cpid",
+								"value": "1186"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							}
+						],
+						"url": "{{baseUrl}}shipment-booking-service/v1/content"
+					},
+					"response": []
+				},
+				{
+					"name": "Pincode-serviceability check",
+					"id": "4b12694f-78c1-4bad-8750-3a011c06ff1e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							}
+						],
+						"url": "{{baseUrl}}pincode-service/v1/pincode/600012"
+					},
+					"response": []
+				},
+				{
+					"name": "Destination CPId by Area Id",
+					"id": "eabcbc16-4335-4710-b32a-19143a6f7588",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							}
+						],
+						"url": "{{baseUrl}}premise-service/v1/premise/areas/premise-id/7648"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Return Address by Client Id",
+					"id": "4fe6e8c9-1d8d-49c8-9d4f-8fc25e35e17a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							}
+						],
+						"url": "{{baseUrl}}shipment-booking-service/v1/shipment/accountbooking/return-address/916161"
+					},
+					"response": []
+				},
+				{
+					"name": "1.a)Account Dox Booking",
+					"id": "5f250e9e-b0fb-4d02-a713-ddef551bc3c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentNumber\": \"23102211115\",\r\n    \"pickupPincode\": null,\r\n    \"deliveryPincode\": \"360003\",\r\n    \"areaId\": 3349,\r\n    \"shipmentType\": \"Dox\",\r\n    \"content\": \"Document\",\r\n    \"description\": \"Passport\",\r\n    \"weight\": \"200\",\r\n    \"length\": null,\r\n    \"width\": null,\r\n    \"height\": null,\r\n    \"volumatricWeight\": null,\r\n    \"value\": \"0\",\r\n    \"ewayBillNumber\": null,\r\n    \"senderGstNumber\": \"27AACFA5688G1ZA\",\r\n    \"service\": \"fast track\",\r\n    \"travelBy\": \"Surface\",\r\n    \"destinationCpId\": 4004,\r\n    \"destinationHubId\": null,\r\n    \"insured\": false,\r\n    \"clientId\": \"916161\",\r\n    \"clientPincode\": 412214,\r\n    \"clientName\": \"Accurate Metrology And Automation Company\",\r\n    \"childShipments\": [],\r\n    \"ewayBills\": [\r\n        {\r\n            \"transMode\": \"Road\",\r\n            \"ewayBillNumber\": \"851404666143\",\r\n            \"name\": \"Keerti\",\r\n            \"expiryDate\": \"20/04/2024 11:59:00 PM\",\r\n            \"ewayBillCreateDate\": \"16/04/2024 04:13:00 PM\"\r\n        }\r\n    ],\r\n    \"addressDetails\": {\r\n        \"senderName\": \"ACCURATE METROLOGY AND AUTOMATION COMPANY\",\r\n        \"senderAddressLine1\": \"855, JEJURI ROAD,KHALAD, SASWAD, PUNE, MAHARASHTRA, 412301\",\r\n        \"senderAddressLine2\": \"\",\r\n        \"senderPincode\": 412214,\r\n        \"senderState\": \"MAHARASHTRA\",\r\n        \"senderMobileNumber\": 9595064102,\r\n        \"senderEmail\": \"ACCOUNTS@ADITYAENGG.COM\",\r\n        \"senderCity\": \"PUNE\",\r\n        \"senderGst\": \"27AACFA5688G1ZA\",\r\n        \"areaName\": \"PUNE\",\r\n        \"customerId\": 0,\r\n        \"receiverName\": \"Rani\",\r\n        \"receiverAddressLine1\": \"1st phase\",\r\n        \"receiverAddressLine2\": null,\r\n        \"receiverCity\": \"RAJKOT\",\r\n        \"receiverPincode\": 360003,\r\n        \"receiverState\": \"GUJARAT\",\r\n        \"receiverAreaId\": 3349,\r\n        \"receiverAreaName\": null,\r\n        \"receiverMobileNumber\": 8088131677,\r\n        \"receiverEmail\": \"govardhan@gmail.com\"\r\n    },\r\n    \"returnAddressDetail\": [\r\n        {\r\n            \"addressDetailsId\": 552,\r\n            \"returnEmail\": \"govardhan@gmail.com\",\r\n            \"returnName\": \"Govardhan\",\r\n            \"returnAddressLine1\": \"8/16 MEHRAM NAGAR OPP.\",\r\n            \"returnAddressLine2\": \"8/16 MEHRAM NAGAR OPP.DOMESTIC AIRPORT PALAM\",\r\n            \"returnCity\": \"East Delhi\",\r\n            \"returnState\": \"Delhi\",\r\n            \"returnPincode\": 110092,\r\n            \"returnAreaId\": null,\r\n            \"returnAreaName\": \"Yozna Vihar\",\r\n            \"returnMobileNumber\": 9988131573,\r\n            \"isAddressEnabled\": false\r\n        },\r\n        {\r\n            \"addressDetailsId\": 1168,\r\n            \"returnEmail\": \"pphatangare77@gmail.com\",\r\n            \"returnName\": \"Keerti\",\r\n            \"returnAddressLine1\": \"J64F+3W7, Station Rd, D.L.B. Society, Amreli\",\r\n            \"returnAddressLine2\": null,\r\n            \"returnCity\": null,\r\n            \"returnState\": null,\r\n            \"returnPincode\": 365601,\r\n            \"returnAreaId\": null,\r\n            \"returnAreaName\": \"Amreli City\",\r\n            \"returnMobileNumber\": 8088131573,\r\n            \"isAddressEnabled\": true\r\n        }\r\n    ],\r\n    \"files\": [\r\n        {\r\n        \"id\": \"96c6ecc2-f0f9-433b-af5d-c63606fe128d\",\r\n        \"filePath\": \"https://s3.ap-south-1.amazonaws.com/smcs-uat/1186/123456789982/smcs_6002516827400.png\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/account-booking"
+					},
+					"response": []
+				},
+				{
+					"name": "1.b)Account Non-dox Booking",
+					"id": "18fd1c19-cb7f-4820-ba19-27c5efa3d884",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentNumber\": \"23111200000062\",\r\n    \"pickupPincode\": null,\r\n    \"deliveryPincode\": \"360003\",\r\n    \"areaId\": 3349,\r\n    \"shipmentType\": \"Non-Dox\",\r\n    \"content\": \"Household Items\",\r\n    \"description\": \"Small Furniture\",\r\n    \"weight\": \"55\",\r\n    \"length\": \"77\",\r\n    \"width\": \"34\",\r\n    \"height\": \"90\",\r\n    \"volumatricWeight\": \"47.12\",\r\n    \"value\": \"77\",\r\n    \"ewayBillNumber\": null,\r\n    \"senderGstNumber\": \"27AACFA5688G1ZA\",\r\n    \"service\": \"standard\",\r\n    \"travelBy\": \"Surface\",\r\n    \"destinationCpId\": 4004,\r\n    \"destinationHubId\": null,\r\n    \"insured\": false,\r\n    \"clientId\": \"916161\",\r\n    \"clientPincode\": 412214,\r\n    \"clientName\": \"Accurate Metrology And Automation Company\",\r\n    \"childShipments\": [],\r\n    \"ewayBills\": null,\r\n    \"addressDetails\": {\r\n        \"senderName\": \"ACCURATE METROLOGY AND AUTOMATION COMPANY\",\r\n        \"senderAddressLine1\": \"855, JEJURI ROAD,KHALAD, SASWAD, PUNE, MAHARASHTRA, 412301\",\r\n        \"senderAddressLine2\": \"\",\r\n        \"senderPincode\": 412214,\r\n        \"senderState\": \"MAHARASHTRA\",\r\n        \"senderMobileNumber\": 9595064102,\r\n        \"senderEmail\": \"ACCOUNTS@ADITYAENGG.COM\",\r\n        \"senderCity\": \"PUNE\",\r\n        \"senderGst\": \"27AACFA5688G1ZA\",\r\n        \"areaName\": \"PUNE\",\r\n        \"customerId\": 0,\r\n        \"receiverName\": \"Rani\",\r\n        \"receiverAddressLine1\": \"1st phase\",\r\n        \"receiverAddressLine2\": null,\r\n        \"receiverCity\": \"RAJKOT\",\r\n        \"receiverPincode\": 360003,\r\n        \"receiverState\": \"GUJARAT\",\r\n        \"receiverAreaId\": 3349,\r\n        \"receiverAreaName\": null,\r\n        \"receiverMobileNumber\": 9088131572,\r\n        \"receiverEmail\": \"govardhan@gmail.com\"\r\n    },\r\n    \"returnAddressDetail\": [\r\n        {\r\n            \"addressDetailsId\": 552,\r\n            \"returnEmail\": \"govardhan@gmail.com\",\r\n            \"returnName\": \"Govardhan\",\r\n            \"returnAddressLine1\": \"8/16 MEHRAM NAGAR OPP.\",\r\n            \"returnAddressLine2\": \"8/16 MEHRAM NAGAR OPP.DOMESTIC AIRPORT PALAM\",\r\n            \"returnCity\": \"East Delhi\",\r\n            \"returnState\": \"Delhi\",\r\n            \"returnPincode\": 110092,\r\n            \"returnAreaId\": null,\r\n            \"returnAreaName\": \"Yozna Vihar\",\r\n            \"returnMobileNumber\": 9988131573,\r\n            \"isAddressEnabled\": true\r\n        },\r\n        {\r\n            \"addressDetailsId\": 1168,\r\n            \"returnEmail\": \"pphatangare77@gmail.com\",\r\n            \"returnName\": \"Keerti\",\r\n            \"returnAddressLine1\": \"J64F+3W7, Station Rd, D.L.B. Society, Amreli\",\r\n            \"returnAddressLine2\": null,\r\n            \"returnCity\": null,\r\n            \"returnState\": null,\r\n            \"returnPincode\": 365601,\r\n            \"returnAreaId\": null,\r\n            \"returnAreaName\": \"Amreli City\",\r\n            \"returnMobileNumber\": 8088131573,\r\n            \"isAddressEnabled\": false\r\n        }\r\n    ],\r\n    \"files\": []\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/account-booking"
+					},
+					"response": []
+				},
+				{
+					"name": "1.c)Account Child booking",
+					"id": "2cc741e1-3f33-4906-81a8-acbf5b7c5f82",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentNumber\": 23111200000061,\r\n    \"pickupPincode\": null,\r\n    \"deliveryPincode\": \"301701\",\r\n    \"areaId\": 2889,\r\n    \"shipmentType\": \"Non-Dox\",  //Dox, Non-Dox\r\n    \"content\": \"Baby Care\",\r\n    \"description\": \"Hair Oil , Skin care etc\",\r\n    \"weight\": \"77\",\r\n    \"length\": \"6\",\r\n    \"width\": \"33\",\r\n    \"height\": \"3\",\r\n    \"volumatricWeight\": \"0.12\",\r\n    \"value\": \"700\",\r\n    \"ewayBillNumber\": null,\r\n    \"senderGstNumber\": \"27AACFA5688G1ZA\",\r\n    \"service\": \"standard\", ////standard, Fast Track, Value Plus\r\n    \"travelBy\": \"Surface\", ////Surface, Air\r\n    \"destinationCpId\": 2235,\r\n    \"destinationHubId\": null,\r\n    \"insured\": false, // true, false\r\n    \"clientId\": \"916161\",\r\n    \"clientPincode\": 412214,\r\n    \"clientName\": \"Accurate Metrology And Automation Company\",\r\n    \"childShipments\": [\r\n        {\r\n            \"childDocumentNumber\": \"23412000031\",\r\n            \"weight\": \"55\",\r\n            \"length\": \"33\",\r\n            \"width\": \"3\",\r\n            \"height\": \"3\",\r\n            \"volumatricWeight\": \"0.06\",\r\n            \"value\": \"788\"\r\n        },\r\n        {\r\n            \"childDocumentNumber\": 23412000032,\r\n            \"weight\": \"75\",\r\n            \"length\": \"4\",\r\n            \"width\": \"33\",\r\n            \"height\": \"37\",\r\n            \"volumatricWeight\": \"0.98\",\r\n            \"value\": \"300\"\r\n        }\r\n    ],\r\n    \"ewayBills\": null,\r\n    \"addressDetails\": {\r\n        \"senderName\": \"ACCURATE METROLOGY AND AUTOMATION COMPANY\",\r\n        \"senderAddressLine1\": \"855, JEJURI ROAD,KHALAD, SASWAD, PUNE, MAHARASHTRA, 412301\",\r\n        \"senderAddressLine2\": \"\",\r\n        \"senderPincode\": 412214,\r\n        \"senderState\": \"MAHARASHTRA\",\r\n        \"senderMobileNumber\": 9595064102,\r\n        \"senderEmail\": \"ACCOUNTS@ADITYAENGG.COM\",\r\n        \"senderCity\": \"PUNE\",\r\n        \"senderGst\": \"27AACFA5688G1ZA\",\r\n        \"areaName\": \"PUNE\",\r\n        \"customerId\": 0,\r\n        \"receiverName\": \"Rani\",\r\n        \"receiverAddressLine1\": \"meharam nagar\",\r\n        \"receiverAddressLine2\": null,\r\n        \"receiverCity\": \"BEHROR\",\r\n        \"receiverPincode\": 301701,\r\n        \"receiverState\": \"RAJASTHAN\",\r\n        \"receiverAreaId\": 2889,\r\n        \"receiverAreaName\": null,\r\n        \"receiverMobileNumber\": 8088131579,\r\n        \"receiverEmail\": null\r\n    },\r\n    \"returnAddressDetail\": [\r\n        {\r\n            \"addressDetailsId\": 552,\r\n            \"returnEmail\": \"govardhan@gmail.com\",\r\n            \"returnName\": \"Govardhan\",\r\n            \"returnAddressLine1\": \"8/16 MEHRAM NAGAR OPP.\",\r\n            \"returnAddressLine2\": \"8/16 MEHRAM NAGAR OPP.DOMESTIC AIRPORT PALAM\",\r\n            \"returnCity\": \"East Delhi\",\r\n            \"returnState\": \"Delhi\",\r\n            \"returnPincode\": 110092,\r\n            \"returnAreaId\": null,\r\n            \"returnAreaName\": \"Yozna Vihar\",\r\n            \"returnMobileNumber\": 9988131573,\r\n            \"isAddressEnabled\": true\r\n        },\r\n        {\r\n            \"addressDetailsId\": 1168,\r\n            \"returnEmail\": \"pphatangare77@gmail.com\",\r\n            \"returnName\": \"Keerti\",\r\n            \"returnAddressLine1\": \"J64F+3W7, Station Rd, D.L.B. Society, Amreli\",\r\n            \"returnAddressLine2\": null,\r\n            \"returnCity\": null,\r\n            \"returnState\": null,\r\n            \"returnPincode\": 365601,\r\n            \"returnAreaId\": null,\r\n            \"returnAreaName\": \"Amreli City\",\r\n            \"returnMobileNumber\": 8088131573,\r\n            \"isAddressEnabled\": false\r\n        }\r\n    ],\r\n    \"files\": []\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/account-booking"
+					},
+					"response": []
+				},
+				{
+					"name": "Recent account booking",
+					"id": "7c55b65d-0004-48de-b0f8-eef9dd0a79b9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							}
+						],
+						"url": "{{baseUrl}}shipment-booking-service/v1/recent-booking/account"
+					},
+					"response": []
+				}
+			],
+			"id": "8964525f-c028-443f-82c1-6aba919de55f"
+		},
+		{
+			"name": "Cash",
+			"item": [
+				{
+					"name": "1.a)Cash Dox Booking",
+					"id": "f8136340-2607-4b6d-9466-5b0ac89b60c7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pickupPincode\": 411001,\r\n    \"deliveryPincode\": \"411051\",\r\n    \"areaId\": 5104,\r\n    \"shipmentType\": \"dox\", //dox, Non-Dox\r\n    \"content\": \"document\",\r\n    \"documentNumber\": \"23043100023826\",\r\n    \"weight\": \"600\",\r\n    \"value\": 0,\r\n    \"destinationCpId\": 3676,\r\n    \"destinationHubId\": null,\r\n    \"description\": \"Form, Catalogue & Paper\",\r\n    \"service\": \"standard\", //standard, fast track, value plus\r\n    \"travelBy\": \"surface\",\r\n    \"baseCharge\": 80,\r\n    \"fov\": null,\r\n    \"cod\": null,\r\n    \"childShipments\": []\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/cashbooking"
+					},
+					"response": []
+				},
+				{
+					"name": "1.a)PUT- Cash Dox Booking",
+					"id": "aa941241-0210-49e7-b62f-2ca1c7a025a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressDetail\": {\r\n        \"senderName\": \"Govardhan\",\r\n        \"senderAddressLine1\": \"8/16 MEHRAM NAGAR OPP.\",\r\n        \"senderAddressLine2\": \"8/16 MEHRAM NAGAR OPP.DOMESTIC AIRPORT PALAM\",\r\n        \"senderPincode\": \"224122\",\r\n        \"senderEmail\": \"govardhan@gmail.com\",\r\n        \"senderMobileNumber\": \"7756431572\",\r\n        \"senderArea\": \"MEHRAM nagar\",\r\n        \"senderGst\": \"27AAACT3904F2ZL\",\r\n        \"receiverName\": \"Keerti\",\r\n        \"receiverAddressLine1\": \"Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 56008\",\r\n        \"receiverAddressLine2\": \"Banashankari\",\r\n        \"receiverPincode\": 411051,\r\n        \"receiverEmail\": \"keertirandewadi@gmail.com\",\r\n        \"receiverAreaName\": \"Banashankari area\",\r\n        \"receiverMobileNumber\": \"8785646487\"\r\n    },\r\n    \"returnAddressDetail\": [\r\n        {\r\n            \"returnName\": \"Govardhan\",\r\n            \"returnAreaName\": \"MEHRAM nagar\",\r\n            \"returnPincode\": \"224122\",\r\n            \"returnAddressLine1\": \"8/16 MEHRAM NAGAR OPP.\",\r\n            \"returnAddressLine2\": \"8/16 MEHRAM NAGAR OPP.DOMESTIC AIRPORT PALAM\",\r\n            \"returnMobileNumber\": \"7756431572\",\r\n            \"returnEmail\": \"govardhan@gmail.com\"\r\n        }\r\n    ],\r\n    \"ewayBills\": null,\r\n    \"chargesDetail\": {\r\n        \"charges\": \"67.80\",\r\n        \"basecharge\": 80,\r\n        \"fov\": 0,\r\n        \"cod\": 0,\r\n        \"cess\": 0,\r\n        \"cgst\": \"6.10\",\r\n        \"sgst\": \"6.10\",\r\n        \"freight\": 80,\r\n        \"igst\": 0,\r\n        \"sez\": 0,\r\n        \"promotionId\": 1,\r\n        \"discount\": 10.5\r\n    },\r\n    \"file\": []\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/cashbooking/23043100023826"
+					},
+					"response": []
+				},
+				{
+					"name": "1.b)Nondox with Child cash_booking",
+					"id": "9d8c579b-2829-4a5e-b30f-63df3984b8bd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pickupPincode\": 411001,\r\n    \"deliveryPincode\": \"110031\",\r\n    \"areaId\": 209,\r\n    \"shipmentType\": \"non-dox\",\r\n    \"content\": \"apparel & accessories\",\r\n    \"documentNumber\": \"23102211114\",\r\n    \"weight\": \"6\",\r\n    \"length\": \"44\",\r\n    \"width\": \"30\",\r\n    \"height\": \"5\",\r\n    \"volumatricWeight\": \"1.32\",\r\n    \"value\": \"899\",\r\n    \"childSelected\": true,\r\n    \"destinationCpId\": 881,\r\n    \"destinationHubId\": null,\r\n    \"description\": \"Footwear\",\r\n    \"service\": \"fast track\",\r\n    \"travelBy\": \"air\",\r\n    \"baseCharge\": 8250,\r\n    \"fov\": null,\r\n    \"cod\": null,\r\n    \"childShipments\": [\r\n        {\r\n            \"childDocumentNumber\": \"23411000028\",\r\n            \"weight\": \"7\",\r\n            \"length\": \"55\",\r\n            \"width\": \"33\",\r\n            \"height\": \"3\",\r\n            \"volumatricWeight\": \"1.09\",\r\n            \"value\": \"44\",\r\n            \"id\": 0.7781294327870485\r\n        },\r\n        {\r\n            \"childDocumentNumber\": \"23411000029\",\r\n            \"weight\": \"2\",\r\n            \"length\": \"5\",\r\n            \"width\": \"4\",\r\n            \"height\": \"55\",\r\n            \"volumatricWeight\": \"0.22\",\r\n            \"value\": \"500\",\r\n            \"id\": 0.8667372154128301\r\n        }\r\n    ]\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/cashbooking"
+					},
+					"response": []
+				},
+				{
+					"name": "1.b)PUT-NonDdox with Child cash_booking",
+					"id": "3d0cbb5f-ff6c-4b64-85d8-899c621155a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"addressDetail\":{\"senderName\":\"Rani\",\"senderAddressLine1\":\"1st phase\",\"senderPincode\":\"211001\",\"senderEmail\":null,\"senderMobileNumber\":\"8765434567\",\"senderArea\":null,\"senderGst\":null,\"receiverName\":\"Keerti Randewadi\",\"receiverAddressLine1\":\"Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 56008\",\"receiverAddressLine2\":null,\"receiverPincode\":110031,\"receiverEmail\":\"keerti@gmail.com\",\"receiverMobileNumber\":\"8088131575\"},\"returnAddressDetail\":[{\"returnName\":\"Rani\",\"returnAreaName\":null,\"returnPincode\":\"211001\",\"returnAddressLine1\":\"1st phase\",\"returnAddressLine2\":null,\"returnMobileNumber\":\"8765434567\",\"returnEmail\":null}],\"ewayBills\":null,\"chargesDetail\":{\"charges\":\"6991.53\",\"basecharge\":8250,\"fov\":0,\"cod\":0,\"cess\":0,\"cgst\":0,\"sgst\":0,\"freight\":8250,\"igst\":\"1258.47\",\"sez\":0,\"promotionId\":1,\"discount\":10.5},\"file\":[]}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/cashbooking/23102211114"
+					},
+					"response": []
+				},
+				{
+					"name": "1.c)Cash NonDox booking",
+					"id": "9c0629f0-90b9-41fc-bdac-8ca128735404",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pickupPincode\": 411001,\r\n    \"deliveryPincode\": \"600044\",\r\n    \"areaId\": 7717,\r\n    \"shipmentType\": \"non-dox\",\r\n    \"content\": \"automobile\",\r\n    \"documentNumber\": \"24010100013445\",\r\n    \"weight\": \"18\",\r\n    \"length\": \"66\",\r\n    \"width\": \"40\",\r\n    \"height\": \"22\",\r\n    \"volumatricWeight\": \"11.62\",\r\n    \"value\": \"3400\",\r\n    \"childSelected\": false,\r\n    \"destinationCpId\": 397,\r\n    \"destinationHubId\": null,\r\n    \"description\": \"Navigation Devices\",\r\n    \"service\": \"standard\",\r\n    \"travelBy\": \"surface\",\r\n    \"baseCharge\": 2340,\r\n    \"fov\": null,\r\n    \"cod\": null,\r\n    \"childShipments\": []\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/cashbooking"
+					},
+					"response": []
+				},
+				{
+					"name": "1.c)PUT -Cash NonDox booking",
+					"id": "affaa93b-7946-4645-aee9-d074a9f128b1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en,kn;q=0.9,hi;q=0.8"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "smcs-premise-id",
+								"value": "1186"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "user-id",
+								"value": "2271"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressDetail\": {\r\n        \"senderName\": \"Rani\",\r\n        \"senderAddressLine1\": \"1st phase, azad nagar\",\r\n        \"senderPincode\": \"301701\",\r\n        \"senderEmail\": null,\r\n        \"senderMobileNumber\": \"8088131579\",\r\n        \"senderArea\": null,\r\n        \"senderGst\": null,\r\n        \"receiverName\": \"Keerti Randewadi\",\r\n        \"receiverAddressLine1\": \"Banashankari 3rd Stage, Bengaluru, Karnataka 600044\",\r\n        \"receiverAddressLine2\": null,\r\n        \"receiverPincode\": 600044,\r\n        \"receiverEmail\": \"keertirandewadi@gmail.com\",\r\n        \"receiverMobileNumber\": \"8088131573\"\r\n    },\r\n    \"returnAddressDetail\": [\r\n        {\r\n            \"returnName\": \"Rani\",\r\n            \"returnAreaName\": null,\r\n            \"returnPincode\": \"301701\",\r\n            \"returnAddressLine1\": \"1st phase, azad nagar\",\r\n            \"returnAddressLine2\": null,\r\n            \"returnMobileNumber\": \"8088131579\",\r\n            \"returnEmail\": null\r\n        }\r\n    ],\r\n    \"ewayBills\": null,\r\n    \"chargesDetail\": {\r\n        \"charges\": \"1983.05\",\r\n        \"basecharge\": 2340,\r\n        \"fov\": 0,\r\n        \"cod\": 0,\r\n        \"cess\": 0,\r\n        \"cgst\": 0,\r\n        \"sgst\": 0,\r\n        \"freight\": 2340,\r\n        \"igst\": \"356.95\",\r\n        \"sez\": 0,\r\n        \"promotionId\": 1,\r\n        \"discount\": 10.5\r\n    },\r\n    \"file\": []\r\n}"
+						},
+						"url": "{{baseUrl}}shipment-booking-service/v1/cashbooking/24010100013445"
+					},
+					"response": []
+				}
+			],
+			"id": "6193fb27-cc16-4701-a622-5ef37a87b94c"
+		},
+		{
+			"name": "Pincode Serviceability",
+			"id": "a9f28874-d575-41c1-82e6-e6089cd8730e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}pincode-service/v1/pincode/serviceability/411051"
+			},
+			"response": []
+		},
+		{
+			"name": "Area by Pincode",
+			"id": "23a1f8fa-7886-45bb-8c49-4cf10f47d020",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}pincode-service/v1/pincode/411051/areas"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Destination CP ID by Area Id",
+			"id": "91a769fb-02d0-4390-b00a-964b2fccba5a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					}
+				],
+				"url": "{{baseUrl}}premise-service/v1/premise/areas/premise-id/5104"
+			},
+			"response": []
+		},
+		{
+			"name": "Ratecard Calculation",
+			"id": "6ddffff8-72c0-40cf-8a37-abbb27fe688c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "_clck=9wegdd%7C2%7Cfjc%7C0%7C1407; userToken={\"name\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiZW5nYWx1cnUuYm9tYW5oYWxsaUBzaHJlZW1hcnV0aWNvdXJpZXIuY29tIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1BBRE1JTiJ9XSwiaXNzIjoiaHR0cDovL3NtY3MtZGV2Lmh1dGVjaHdlYi5jb20vc21jcy13ZWJhcHAiLCJqdGkiOiJiNmJmOTFkMi1hNzU4LTQ3YTEtYTIyYy1jYWQ4ZDUwNWM0MjQiLCJpYXQiOjE3MTI3Mzg0ODcsImV4cCI6MTcxMjc2NzI4N30.Sg9xq901M_NgLzTJJRbNlxAF03NaE-MaHZHamUAj-6c\",\"email\":\"bengaluru.bomanhalli@shreemaruticourier.com\"}"
+					},
+					{
+						"key": "SMCS-PREMISE-ID",
+						"value": "1186"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "clientId",
+						"value": "0"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"areaId\": 3676,\r\n    \"type\": \"DOX\", //DOX, Non-DOX\r\n    \"weight\": \"600\",\r\n    \"stateName\": \"MAHARASHTRA\"\r\n}"
+				},
+				"url": "{{baseUrl}}ratecard-service/v1/ratecard/calculate/from/411001/to/411051"
+			},
+			"response": []
+		},
+		{
+			"name": "TAT Calculations",
+			"id": "0c99cac8-3b2c-4f35-a51c-0fad245fab0e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "_clck=9wegdd%7C2%7Cfjc%7C0%7C1407; userToken={\"name\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiZW5nYWx1cnUuYm9tYW5oYWxsaUBzaHJlZW1hcnV0aWNvdXJpZXIuY29tIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1BBRE1JTiJ9XSwiaXNzIjoiaHR0cDovL3NtY3MtZGV2Lmh1dGVjaHdlYi5jb20vc21jcy13ZWJhcHAiLCJqdGkiOiJiNmJmOTFkMi1hNzU4LTQ3YTEtYTIyYy1jYWQ4ZDUwNWM0MjQiLCJpYXQiOjE3MTI3Mzg0ODcsImV4cCI6MTcxMjc2NzI4N30.Sg9xq901M_NgLzTJJRbNlxAF03NaE-MaHZHamUAj-6c\",\"email\":\"bengaluru.bomanhalli@shreemaruticourier.com\"}"
+					},
+					{
+						"key": "SMCS-DPREMISE-ID",
+						"value": "3676"
+					},
+					{
+						"key": "SMCS-PREMISE-ID",
+						"value": "1186"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"url": "{{baseUrl}}tat-service/v1/tat/from/411001/to/411051"
+			},
+			"response": []
+		},
+		{
+			"name": "Shipment Details",
+			"id": "af7a46ba-ea2d-4c54-8c6e-f4a356debf57",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "_clck=9wegdd%7C2%7Cfjc%7C0%7C1407; userToken={\"name\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiZW5nYWx1cnUuYm9tYW5oYWxsaUBzaHJlZW1hcnV0aWNvdXJpZXIuY29tIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1BBRE1JTiJ9XSwiaXNzIjoiaHR0cDovL3NtY3MtZGV2Lmh1dGVjaHdlYi5jb20vc21jcy13ZWJhcHAiLCJqdGkiOiJiNmJmOTFkMi1hNzU4LTQ3YTEtYTIyYy1jYWQ4ZDUwNWM0MjQiLCJpYXQiOjE3MTI3Mzg0ODcsImV4cCI6MTcxMjc2NzI4N30.Sg9xq901M_NgLzTJJRbNlxAF03NaE-MaHZHamUAj-6c\",\"email\":\"bengaluru.bomanhalli@shreemaruticourier.com\"}"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"url": "{{baseUrl}}shipment-booking-service/v1/shipments/23043100023826"
+			},
+			"response": []
+		},
+		{
+			"name": "Area Details by Pincode",
+			"id": "f58b54a3-f4f6-4b81-9eac-d22d36c637e2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiZW5nYWx1cnUuaGViYmFsaHViQHNocmVlbWFydXRpY291cmllci5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9IVUJBRE1JTiJ9XSwiaXNzIjoiaHR0cDovL3NtY3MtZGV2Lmh1dGVjaHdlYi5jb20vc21jcy13ZWJhcHAiLCJqdGkiOiJiNjAzM2M2MS1jODM5LTQzOTctOGMxMS1iYWM0ZDQ5ZTJhMTgiLCJpYXQiOjE3MTI4MjQ2MDUsImV4cCI6MTcxMjg1MzQwNX0.eF6j4h89n07WidLe9i6EMCP3NLTCT9kfuUm4Grir7Ms"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiZW5nYWx1cnUuYm9tYW5oYWxsaUBzaHJlZW1hcnV0aWNvdXJpZXIuY29tIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1BBRE1JTiJ9XSwiaXNzIjoiaHR0cDovL3NtY3MtZGV2Lmh1dGVjaHdlYi5jb20vc21jcy13ZWJhcHAiLCJqdGkiOiIxZmUzZTk5NS0zMDBmLTQxNmUtODc3ZS02NTFlN2ExN2RiZDUiLCJpYXQiOjE3MTI4MjcxOTUsImV4cCI6MTcxMjg1NTk5NX0.TNQvdeUCiNNRrQZTMnD0JU4f-UF16EhOqNNPCoOzlg4"
+					},
+					{
+						"key": "origin",
+						"value": "https://uathubops.innofulfill.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://uathubops.innofulfill.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					}
+				],
+				"url": "https://uatapis-hubops.innofulfill.com/smcs-webapp/pincode-service/v1/pincode/415612"
+			},
+			"response": []
+		},
+		{
+			"name": "Upload File",
+			"id": "55313017-9c4a-4d24-8b43-13b7219877ec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "awbnumber",
+						"value": "123456789982"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "smcs-premise-id",
+						"value": "1186"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-requested-with",
+						"value": "XMLHttpRequest"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/swati/Downloads/image (40).png"
+						}
+					]
+				},
+				"url": "{{baseUrl}}file-service/v1/file"
+			},
+			"response": []
+		},
+		{
+			"name": "Ewaybill Service",
+			"id": "08e37e9e-172c-4bb5-9c7f-9636d1d3e4d8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "smcs-premise-id",
+						"value": "1186"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					}
+				],
+				"url": "{{baseUrl}}ewaybill-service/v1/eway-bills/801404665637"
+			},
+			"response": []
+		},
+		{
+			"name": "GST verification",
+			"id": "424eb29e-d8ab-4360-b51c-b784329cb846",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "smcs-premise-id",
+						"value": "1186"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "user-id",
+						"value": "2271"
+					}
+				],
+				"url": "{{baseUrl}}premise-service/v1/premise/gst/27AAACT3904F2ZL"
+			},
+			"response": []
+		},
+		{
+			"name": "Shipment booking All status",
+			"id": "ab2d3ca2-7b4a-4fbe-a4c4-dfbbbaa9a1f5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "smcs-premise-id",
+						"value": "1186"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "user-id",
+						"value": "2271"
+					}
+				],
+				"url": "{{baseUrl}}shipment-service/v1/shipment-operation/allstatus"
+			},
+			"response": []
+		},
+		{
+			"name": "All Shipment Booking",
+			"id": "e656510e-d80e-4a14-a9ec-380e3e98c323",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "smcs-premise-id",
+						"value": "1186"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "user-id",
+						"value": "2271"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}shipment-booking-service/v1/shipments/?pageNo=0&pageSize=10&fromDate=17-04-2024&toDate=18-04-2024&bookingType=Both&status=All",
+					"host": [
+						"{{baseUrl}}shipment-booking-service"
+					],
+					"path": [
+						"v1",
+						"shipments",
+						""
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "fromDate",
+							"value": "17-04-2024"
+						},
+						{
+							"key": "toDate",
+							"value": "18-04-2024"
+						},
+						{
+							"key": "bookingType",
+							"value": "Both"
+						},
+						{
+							"key": "status",
+							"value": "All"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash Edit API",
+			"id": "a81be80d-a262-4464-8633-1feb90a5cc7b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en,kn;q=0.9,hi;q=0.8"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cookie",
+						"value": "_clck=1t3sesn%7C2%7Cfj9%7C0%7C1402; userToken={\"name\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXJhbkBzaHJlZW1hcnV0aWNvdXJpZXIuY29tIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ1BBRE1JTiJ9XSwiaXNzIjoiaHR0cDovL3NtY3MtZGV2Lmh1dGVjaHdlYi5jb20vc21jcy13ZWJhcHAiLCJqdGkiOiJiMmQ4YmFiNC03NWZkLTQ0ZDktODJmMy0zYjllMGIzY2MyNzIiLCJpYXQiOjE3MTM0MTkzNjgsImV4cCI6MTcxMzQ0ODE2OH0.jMihZC85PNo-MmB7CdpcDde8yOGZYogJNk-F9Be_p_U\",\"email\":\"naran@shreemaruticourier.com\"}"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"url": "{{baseUrl}}shipment-booking-service/v1/shipments/23043100023822"
+			},
+			"response": []
+		},
+		{
+			"name": "Postal Pin code API",
+			"id": "33e6dc42-fb4b-4ab5-ac39-6afa8618f8ac",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					}
+				],
+				"url": "https://api.postalpincode.in/pincode/365601"
+			},
+			"response": []
+		},
+		{
+			"name": "Message API",
+			"id": "62f26eb8-bd8e-471a-9b70-8e31c704b93c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"url": {
+					"raw": "https://pgapi.vispl.in/fe/api/v1/send?username=shremotpg.trans&password=uNIvT&unicode=false&from=SMILL&dltPrincipalEntityId=1001569800000012636&dltContentId=1007163186467531163&text=Shree%20Maruti%20Courier%20%20%20%20%20%20%20%20Your%20shipment%2023043100023822%20is%20booked%20with%20Shree%20Maruti%20Courier.%20To%20track%20your%20shipment%20you%20can%20visit%20https://www.shreemaruticourier.com/tracking/?d=23043100023822&to=8796787665",
+					"protocol": "https",
+					"host": [
+						"pgapi",
+						"vispl",
+						"in"
+					],
+					"path": [
+						"fe",
+						"api",
+						"v1",
+						"send"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "shremotpg.trans"
+						},
+						{
+							"key": "password",
+							"value": "uNIvT"
+						},
+						{
+							"key": "unicode",
+							"value": "false"
+						},
+						{
+							"key": "from",
+							"value": "SMILL"
+						},
+						{
+							"key": "dltPrincipalEntityId",
+							"value": "1001569800000012636"
+						},
+						{
+							"key": "dltContentId",
+							"value": "1007163186467531163"
+						},
+						{
+							"key": "text",
+							"value": "Shree%20Maruti%20Courier%20%20%20%20%20%20%20%20Your%20shipment%2023043100023822%20is%20booked%20with%20Shree%20Maruti%20Courier.%20To%20track%20your%20shipment%20you%20can%20visit%20https://www.shreemaruticourier.com/tracking/?d=23043100023822"
+						},
+						{
+							"key": "to",
+							"value": "8796787665"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Campaign/smartping/api",
+			"id": "a46a72c1-9876-4ea7-b741-3105b4b86b83",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"apiKey\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODAyMmZmODExOGRhNTQ0YmVkMTVmMCIsIm5hbWUiOiJTSFJJIE1BUlVUSSBJTlRFR1JBVEVEIExPR0lTVElDUyBMSU1JVEVEIiwiYXBwTmFtZSI6IkFpU2Vuc3kiLCJjbGllbnRJZCI6IjY1ODAyMjdmMDllNTBkMTBkMDA2Yjk1OCIsImFjdGl2ZVBsYW4iOiJOT05FIiwiaWF0IjoxNzAyODk2MzgzfQ.57vK6P_o4ABg9feJanqUVjyGXubEsNGFQ1KAWKCYoR4\",\"campaignName\":\"standard_v20\",\"destination\":\"8797687867\",\"userName\":\"smcs\",\"media\":{\"url\":\"https://hubops.innofulfill.com/static/media/Smcs_New_Logo.085091870cb846667792.png\",\"filename\":\"23043100023822\"},\"templateParams\":[\"23043100023822\",\"Abhishek\",\"DELHI, DELHI\",\"https://www.shreemaruti.com/dw/?a=R98s3K\",\"https://www.shreemaruti.com/dw/?a=S79s3P\",\"tracking/?d=23043100023822\"]}"
+				},
+				"url": "https://backend.api-wa.co/campaign/smartping/api"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				],
+				"id": "0deb8605-4e70-443d-8917-5a4156353dfc"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				],
+				"id": "b65a28e6-6adf-4d46-ac65-6fb8a051cf49"
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://uatapis-hubops.innofulfill.com/smcs-webapp/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
